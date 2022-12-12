@@ -1,5 +1,5 @@
 $primary-font: 'Comfortaa', cursive;
-$heading-font: 'Comfortaa', cursive;
+$heading-font: 'Chelsea Market', serif;
 $bg-black: #1C1C1C;
 $dark-blue:  #1D3557;
 $dark-orange: #BC6C25;
@@ -63,7 +63,7 @@ a:hover {
 .page-content {
   margin: 10px 0;
   text-align: center;
-  h1 {background-color: #c9c8c8;} 
+  h1 {background-color: #BACCA0;} 
   h1 {padding: 40px;}
   h1 {border-radius: 20px;}
   h3 {padding-top: 40px;}
@@ -141,11 +141,13 @@ img {
 
 .top-nav {
   list-style-type: none;
+  font-family: $heading-font;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #1C1C1C;
+  background-color: #BACCA0;
+  /*border-bottom: 2px solid #1C1C1C;*/
 
   & li a {
     display: block;
