@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ if isset .Params "title" }}
+    <title>{{ .Title }} | {{ site.Title }}</title>
+    {{ else }}
+    <title>{{ site.Title }}</title>
+    {{ end }}
+    <meta property="og:title" content="resources.Get main.scss" />
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet"> 
+</head>
+<body class="page">
+    <header>
+        <nav>
+          <ul class="top-nav">
+            <li class="top-nav__logo"><a href="/"><img class="logo" src="/Logo_Namefull.jpg"></a></li>
+            <div class="top-nav__link-group">
+              <li class="top-nav__link"><a href="/">Home</a></li>
+              <li class="top-nav__link"><a href="/about">About</a></li>
+              <li class="top-nav__link"><a href="/woodlands">Woodlands</a></li>
+              <li class="top-nav__link"><a href="/sessions">Sessions</a></li>
+              <li class="top-nav__link"><a href="/contact">Contact</a>
+            </div>
+          <div class="dropdown">
+              <a onclick="menu()" class="dropbtn">Menu</a>
+                <div id="menuDropdown" class="dropdown-content">
+                  <a href="/">Home</a>
+                  <a href="/about">About</a>
+                  <a href="/woodlands">Woodlands</a>
+                  <a href="/sessions">Sessions</a>
+                  <a href="/contact">Contact</a>
+                </div>
+            </div> 
+          </ul>
+        </nav>
+        <script>
+          /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function menu() {
+        document.getElementById("menuDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+      </header>
+    <main class="main-content">
+      <div class="container">
+        
+        <div class="page-content" style="max-width:100%;height:auto;">
+            {{ block "main" . }}{{ end }}
+        </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-content__left-group">
+          <h2 class="footer-content__site-name">{{ site.Title }}</h2>
+          <p>© Maker Arts CIC {{ now.Format "2006" }}</p>
+        </div>
+        <!--<div class="footer-content__right-group">
+          <div class="newsletter-form">
+            <h2 class="newsletter-form__form-title">Sign up for our newsletter</h2>
+            <div class="input-wrapper">
+              <input type="text" placeholder="Enter your email">
+              <a>
+                <img class="submit-arrow" src="/arrow-white.svg">
+              </a>
+            </div>
+          </div>
+        </div>-->
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/makerartscic" class="icons"><img src="/facebook-icon.svg"></a>
+        <!--<a href="#" class="icons"><img src="/linkedin-icon.svg"></a>
+        <a href="#" class="icons"><img src="/twitter-icon.svg"></a>
+        <a href="#" class="icons"><img src="/youtube-icon.svg"></a>-->
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

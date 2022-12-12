@@ -1,0 +1,8 @@
+baseURL = "https://www.makerarts.co.uk/"
+languageCode = "en"
+title = "Dainton Copse Forest School CIC"
+
+[params]
+  author = "makerarts"
+
+disableKinds = ["taxonomy"]
