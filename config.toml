@@ -3,6 +3,6 @@ languageCode = "en"
 title = "Dainton Copse Forest School CIC"
 
 [params]
-  author = "makerarts"
+  author = "alexmakerarts"
 
 disableKinds = ["taxonomy"]
