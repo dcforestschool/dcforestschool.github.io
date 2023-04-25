@@ -38,6 +38,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   line-height: 2rem;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 a, a:visited {
@@ -635,9 +637,38 @@ img {
     display: none;
     }
 
-  .imageButton {
-    width: auto;
-    height: 100px;
+  .imageButtons {
+    display: flex;
+    object-position: 50%, 0%;
+    width: 800px;
+    height: 100%;
+  }
+
+  .responsive {
+    float:left;
+    width: 33.33%;
+    height: 370px;
+  }
+  
+  .gallery {
+    margin: 5px;
+    //border: 1px solid #ccc;
+    float: left;
+    width: 100%;
+  }
+
+  .gallery:hover {
+    border: 0px solid #777;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  .desc {
+    padding: 15px;
+    text-align: center;
   }
 
   .page-content {
